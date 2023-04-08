@@ -1,0 +1,68 @@
+---
+export interface props {
+  navLinks?: [];
+}
+
+const { navLinks = ["home", "about", "contact"] } = Astro.props;
+---
+
+<header class="clr-white main-header">
+  <div class="wrapper container flex">
+    <div class="logo flex">
+      <img class="logo_image" src="images/logo.png" alt="logo" />
+      <a href="/">LazyOwls</a>
+    </div>
+    <nav>
+      <ul class="nav-links flex" role="list">
+        {
+          navLinks.map((link) => {
+            if (link.toLowerCase() === "home") {
+              return (
+                <li>
+                  <a href="/">{link}</a>
+                </li>
+              );
+            } else {
+              return (
+                <li>
+                  <a href={link.toLowerCase()}>{link}</a>
+                </li>
+              );
+            }
+          })
+        }
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<script>
+  const header = document.querySelector("header");
+  let lastscroll = 0;
+
+  window.addEventListener("scroll", () => {
+    const currentScroll = window.pageYOffset;
+
+    if (currentScroll <= 0) {
+      header.classList.remove("scroll-up");
+    }
+
+    if (
+      currentScroll > lastscroll &&
+      !header.classList.contains("scroll-down")
+    ) {
+      header.classList.remove("scroll-up");
+      header.classList.add("scroll-down");
+    }
+
+    if (
+      currentScroll < lastscroll &&
+      header.classList.contains("scroll-down")
+    ) {
+      header.classList.remove("scroll-down");
+      header.classList.add("scroll-up");
+    }
+
+    lastscroll = currentScroll;
+  });
+</script>

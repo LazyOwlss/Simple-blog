@@ -1,0 +1,72 @@
+---
+import "../styles/style.scss";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import Trademark from "../components/Trademark.astro";
+
+export interface Props {
+  title?: string;
+  desContent?: string;
+}
+
+const {
+  title = "LazyOwls Astro Template",
+  desContent = "A SCSS-based Astro template for easily styling and customizing web applications. It includes pre-built components and efficient stylesheet management.",
+} = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Meta Data -->
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=yes, initial-scale=1.0"
+    />
+    <meta name="description" content={desContent} />
+    <meta name="keywords" content="" />
+    <meta name="author" content="LazyOwls" />
+    <meta name="theme-color" content="#black" />
+    <meta name="robots" content="index, follow" />
+
+    <!-- Facebook Metatags
+  <meta property="og:title" content="Title of page" />
+  <meta property="og:description" content="Description" />
+  <meta property="og:image" content="image URL" />
+  <meta property="og:url" content="website URL" />
+  <meta property="og:site_name" content="site name" /> -->
+
+    <!-- Twitter Metatags
+  <meta name="twitter:title" content="title " />
+  <meta name="twitter:description" content="description" />
+  <meta name="twitter:image" content="image URL" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image:alt" content="Alt text for image"> -->
+
+    <!-- Facebook & twitter Analytics
+  <meta property="fb:app_id" content="your_app_id" />
+  <meta name="twitter:site" content="@website-username" /> -->
+
+    <!-- Fonts -->
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="images/logo.png" />
+    <link rel="apple-touch-icon" sizes="60 x 60" href="images/logo.png" />
+
+    <!-- Base URL -->
+    <base href="#" />
+
+    <!-- Title -->
+    <title>{title}</title>
+  </head>
+
+  <!-- script -->
+  <body>
+    <Header navLinks={["home", "about"]}/>
+      <slot />
+    <Trademark />
+    <Footer />
+  </body>
+</html>

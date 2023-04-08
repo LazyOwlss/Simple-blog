@@ -1,0 +1,71 @@
+@use "../Util/index" as *;
+
+.main-header {
+  padding: em(16, 16) 0;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 9;
+  transition: all 300ms ease;
+  min-height: 60px;
+
+  .wrapper {
+    justify-content: space-between;
+    align-items: center;
+
+    .logo {
+      align-items: center;
+      gap: em(10, 36);
+
+      .logo_image {
+        width: rem(32);
+
+        @include breakpoint(tablet){
+          width: rem(52);
+        }
+      }
+
+      a {
+        color: hsl(var(--clr-dark));
+        text-decoration: none;
+        font-family: $title-font;
+        font-size: rem(22.4);
+        font-weight: 700;
+        letter-spacing: em(5, 36);
+
+        @include breakpoint(tablet) {
+          font-size: rem(32);
+        }
+
+        &:hover {
+          color: inherit;
+        }
+      }
+    }
+
+    .nav-links {
+      width: fit-content;
+      justify-content: space-between;
+      gap: em(28, 16);
+
+      a {
+        font-size: rem(14);
+        text-transform: uppercase;
+        text-align: right;
+
+        @include breakpoint(tablet){
+          font-size: rem(16);
+        }
+      }
+    }
+  }
+}
+
+.scroll-down {
+  transform: translate3d(0, -100%, 0);
+}
+
+.scroll-up {
+  filter: drop-shadow(0 -10px 20px rgb(170 170 170 / 0.3));
+}

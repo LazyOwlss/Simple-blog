@@ -1,0 +1,33 @@
+@use "../Util/index" as *;
+
+.recent_posts {
+  padding: em(34, 16) 0;
+  --flow-space: 1.5rem;
+
+  .recent_posts_title {
+    font-family: "Fira Sans", sans-serif;
+    text-align: center;
+    font-size: rem(16);
+    font-weight: bold;
+    margin-bottom: em(24, 16);
+
+    @include breakpoint(tablet) {
+      font-size: rem(24);
+    }
+  }
+
+  @include breakpoint(tablet) {
+    --flow-space: 0;
+    padding: em(60, 16) 0;
+  }
+
+  .container {
+    gap: em(24, 16);
+    flex-wrap: wrap;
+    justify-content: center;
+
+    & > * {
+      flex: 1 rem(300);
+    }
+  }
+}

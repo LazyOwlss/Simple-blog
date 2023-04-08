@@ -1,0 +1,7 @@
+@use '../Util/index' as *;
+
+footer {
+    background-color: rgb(17, 17, 17);
+    text-align: center;
+    padding: em(32, 16);
+}

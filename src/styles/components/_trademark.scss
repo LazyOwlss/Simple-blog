@@ -1,0 +1,30 @@
+@use "../Util/index" as *;
+
+.trademark_link {
+  display: none;
+
+  #lazy_trademark {
+    width: 100px;
+    position: fixed;
+    left: 3%;
+    bottom: 5%;
+
+    #main_ring {
+      animation: rotation 13s linear infinite;
+      transform-origin: center;
+    }
+  }
+  @include breakpoint(tablet) {
+    display: block;
+  }
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotateZ(0deg);
+  }
+
+  100% {
+    transform: rotateZ(360deg);
+  }
+}

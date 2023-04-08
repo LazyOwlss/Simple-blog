@@ -1,0 +1,19 @@
+@use "functions" as *;
+
+$tablet: 480;
+$small-screen: 768;
+$hd-screen: 1024;
+$desktop: 1280;
+
+$breakpoints-up: (
+  "tablet": rem($tablet),
+  "small-screen": rem($small-screen),
+  "hd-screen": rem($hd-screen),
+  "desktop": rem($desktop),
+);
+
+@mixin breakpoint($device) {
+  @media (min-width: map-get($breakpoints-up, $device)) {
+    @content;
+  }
+}

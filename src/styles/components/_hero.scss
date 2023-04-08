@@ -1,0 +1,44 @@
+@use "../Util/index" as *;
+
+.main-hero {
+  min-height: 360px;
+  background-position: bottom;
+  background-size: cover;
+  align-items: end;
+  padding-block: em(24, 16);
+  position: relative;
+
+  @include breakpoint(tablet) {
+    min-height: 548px;
+  }
+
+  .hero-content {
+    position: absolute;
+    bottom: 7%;
+
+    @include breakpoint(tablet) {
+      max-width: 657px;
+    }
+  }
+
+  .date {
+    font-size: rem(12);
+
+    @include breakpoint(tablet) {
+      font-size: rem(16);
+    }
+  }
+
+  .hero-title {
+    font-size: rem(32);
+
+    @include breakpoint(tablet) {
+      font-size: rem(40);
+    }
+  }
+
+  .synopsis {
+    font-size: rem(16);
+    line-height: 20.11px;
+  }
+}

@@ -1,0 +1,22 @@
+@use "../Util/index" as *;
+
+.card {
+  flex-direction: column;
+  gap: em(9, 16);
+
+  .card-image {
+    border-radius: em(3, 16);
+  }
+
+  .card-date {
+  }
+
+  .card-title {
+    font-family: "Fira Sans", sans-serif;
+    font-weight: bold;
+  }
+
+  .card-description {
+    font-size: rem(16);
+  }
+}

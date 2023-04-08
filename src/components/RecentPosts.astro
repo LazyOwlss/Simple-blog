@@ -1,0 +1,24 @@
+---
+import Card from './Card.astro'
+const posts = await Astro.glob('../posts/*.md')
+---
+
+<section class="recent_posts">
+    <h2 class="recent_posts_title">Recent Posts</h2>
+    <div class="container flow flex">
+          {
+              posts.sort((a,b)=>a.frontmatter.postNo - b.frontmatter.postNo).reverse().map((post,index) => {
+                  if (index < 3) {
+                     return  <Card
+                          image={post.frontmatter.image1.src}
+                          date={post.frontmatter.date}
+                          title={post.frontmatter.title}
+                          description={post.frontmatter.description}
+                          slug={`/${post.frontmatter.slug}`}
+                      />
+                  }
+              }
+
+          )}
+    </div>
+</section>

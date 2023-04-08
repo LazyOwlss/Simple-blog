@@ -1,0 +1,58 @@
+@use "../Util/index" as *;
+
+.about_main {
+  background-color: #f3f3f3;
+
+  .about_content {
+    padding-top: em(90, 16);
+
+    @include breakpoint(tablet) {
+      padding-top: em(120, 16);
+    }
+
+    @include breakpoint(hd-screen) {
+      padding-top: em(160, 16);
+      display: flex;
+      gap: em(28, 16);
+      align-items: center;
+    }
+  }
+
+  .avatar {
+    padding: em(10, 16);
+    margin-bottom: em(28, 16);
+    width: 182px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid hsl(var(--clr-bg));
+  }
+
+  .about_content_text {
+    p {
+      font-size: rem(16);
+    }
+
+    h1 {
+      font-size: rem(32);
+      margin-bottom: em(12, 32);
+
+      @include breakpoint(hd-screen) {
+        font-size: rem(36);
+      }
+    }
+  }
+}
+
+.extra_informatin {
+  margin-top: em(50, 16);
+
+  @include breakpoint(hd-screen) {
+    max-width: 1280px;
+  }
+
+  p {
+    margin-top: em(12, 16);
+    font-size: rem(16);
+  }
+}

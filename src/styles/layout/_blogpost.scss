@@ -1,0 +1,59 @@
+@use "../Util/index" as *;
+
+main.blog {
+  padding-top: em(98, 16);
+  background-color: #f3f3f3;
+
+  .wrapper {
+    margin-bottom: em(36, 16);
+    max-width: 1280px;
+    margin-inline: auto;
+
+    .date {
+      font-size: rem(12);
+      margin-bottom: em(16, 12);
+
+      @include breakpoint(tablet) {
+        font-size: rem(16);
+      }
+    }
+
+    .title {
+      font-size: rem(32);
+      margin-bottom: em(16, 32);
+      font-weight: bolder;
+
+      @include breakpoint(tablet) {
+        font-size: rem(36);
+      }
+    }
+
+    .description {
+      font-size: rem(16);
+    }
+
+    h2 {
+      font-family: "Fira Sans", sans-serif;
+      font-size: rem(16);
+      margin-bottom: em(16, 16);
+
+      @include breakpoint(tablet) {
+        font-size: rem(24);
+        margin-bottom: em(12, 24);
+      }
+    }
+
+    p {
+      font-size: rem(16);
+      margin-bottom: em(16, 16);
+    }
+  }
+
+  img {
+    max-height: 600px;
+    width: 100%;
+    object-fit: cover;
+    object-position: bottom;
+    margin-bottom: em(36, 16);
+  }
+}

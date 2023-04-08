@@ -1,0 +1,21 @@
+@use "../Util/index" as *;
+
+.blog-posts {
+  padding: em(34, 16) 0;
+  --flow-space: 1.5rem;
+
+  @include breakpoint(tablet) {
+    --flow-space: 0;
+    padding: em(60, 16) 0;
+  }
+
+  .container {
+    gap: em(24, 16);
+    flex-wrap: wrap;
+    justify-content: center;
+
+    & > * {
+      flex: 1 rem(300);
+    }
+  }
+}

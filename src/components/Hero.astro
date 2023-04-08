@@ -1,0 +1,20 @@
+---
+export interface props {
+      date?: string;
+      title?: string;
+      content?: string;
+      hero_image?: string;
+}
+
+const {date, title, content, hero_image} = Astro.props;
+---
+
+<section class="main-hero clr-dark" style=`background-image: url(${hero_image})`>
+    <div class="container">
+        <div class="hero-content">
+            <p class="date uppercase">{date}</p>
+            <h1 class="hero-title">{title}</h1>
+            <p class="synopsis">{content}</p>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,33 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Hero from "../components/Hero.astro"
+import Card from "../components/Card.astro"
+import {alphaDate} from "../assets/utils.js"
+
+const postsArray = await Astro.glob('../posts/*.md')
+const sortedPosts = postsArray.sort((a,b)=>a.frontmatter.postNo - b.frontmatter.postNo).reverse()
+---
+
+<Layout>
+    <main class="clr-white">
+    <Hero
+        hero_image={sortedPosts[0].frontmatter.image1.src}
+        date={alphaDate(sortedPosts[0].frontmatter.date)}
+        title={sortedPosts[0].frontmatter.title}
+        content={sortedPosts[0].frontmatter.description}
+    />
+    <section class="blog-posts">
+        <div class="container flow flex">
+            { sortedPosts.sort((a,b)=>a.frontmatter.postNo - b.frontmatter.postNo).reverse().map(post => (
+                <Card
+                    image={post.frontmatter.image1.src}
+                    date={post.frontmatter.date}
+                    title={post.frontmatter.title}
+                    description={post.frontmatter.description}
+                    slug={`/${post.frontmatter.slug}`}
+                    />
+            ))}
+        </div>
+    </section>
+        </main>
+</Layout>

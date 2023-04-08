@@ -1,0 +1,39 @@
+---
+import Layout from "../layouts/Layout.astro"
+import RecentPosts from "../components/RecentPosts.astro"
+import {alphaDate} from "../assets/utils.js"
+export async function getStaticPaths(){
+      const posts = await Astro.glob("../posts/*.md")
+
+      return posts.map(post => ({
+            params: {
+                  slug: post.frontmatter.slug
+            },
+            props: {
+                  post
+            }
+      }))
+}
+
+const {Content, frontmatter} = Astro.props.post
+---
+
+<Layout>
+    <main class="blog clr-white">
+          <section>
+              <div class="container">
+                  <div class="wrapper">
+                      <p class="date uppercase">{alphaDate(frontmatter.date)}</p>
+                      <h1 class="title">{frontmatter.title}</h1>
+                      <p class="description">{frontmatter.description}</p>
+
+                  </div>
+                  <img loading="lazy" src={frontmatter.image1.src} alt={frontmatter.image1.alt}>
+                  <div class="wrapper">
+                     <Content />
+                  </div>
+              </div>
+          </section>
+        <RecentPosts />
+    </main>
+</Layout>

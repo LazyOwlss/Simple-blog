@@ -1,0 +1,19 @@
+{
+	"name": "my-astro-template",
+	"type": "module",
+	"version": "0.0.1",
+	"scripts": {
+		"dev": "astro dev --host",
+		"start": "astro dev",
+		"build": "astro build",
+		"preview": "astro preview",
+		"astro": "astro"
+	},
+	"dependencies": {
+		"astro": "^2.0.15",
+		"gsap": "^3.11.4"
+	},
+	"devDependencies": {
+		"sass": "^1.58.3"
+	}
+}
