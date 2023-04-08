@@ -4,7 +4,7 @@ slug: blog_three
 date: 2023-04-07
 postNo: 3
 author: lazyOwls
-image1: { src: "/images/downloaded/post3.jpg", alt: "image" }
+image1: { src: "/images/downloaded/post3.webp", alt: "image" }
 description:
   I'm excited to start a new learning journey as a Scrimba Bootcamp student! After several months of
   learning in the Frontend Developer Career Path.

@@ -4,7 +4,7 @@ slug: blog_five
 date: 2023-04-08
 postNo: 5
 author: lazyOwls
-image1: { src: "/images/downloaded/post1.jpg", alt: "image" }
+image1: { src: "/images/downloaded/post1.webp", alt: "image" }
 description: That helped me grok what I was learning, and I realized that posting my learning summaries was also helping others learn and stay motivated.
 category: Docs
 ---
