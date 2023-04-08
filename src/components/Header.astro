@@ -25,7 +25,7 @@ const { navLinks = ["home", "about", "contact"] } = Astro.props;
             } else {
               return (
                 <li>
-                  <a href={link.toLowerCase()}>{link}</a>
+                  <a href={`/${link.toLowerCase()}`}>{link}</a>
                 </li>
               );
             }
