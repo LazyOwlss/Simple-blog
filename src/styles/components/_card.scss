@@ -3,8 +3,11 @@
 .card {
   flex-direction: column;
   gap: em(9, 16);
+  justify-content: space-between;
 
   .card-image {
+    aspect-ratio: 16/9;
+    object-fit: cover;
     border-radius: em(3, 16);
   }
 
@@ -18,5 +21,9 @@
 
   .card-description {
     font-size: rem(16);
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
   }
 }
