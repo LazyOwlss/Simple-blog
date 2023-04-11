@@ -18,7 +18,7 @@ export async function getStaticPaths(){
 const {Content, frontmatter} = Astro.props.post
 ---
 
-<Layout>
+<Layout title=`LazyOwls || ${frontmatter.title}` desContent={frontmatter.description}>
     <main class="blog clr-white">
           <section>
               <div class="container">

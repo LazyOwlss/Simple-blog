@@ -8,7 +8,7 @@ const postsArray = await Astro.glob('../posts/*.md')
 const sortedPosts = postsArray.sort((a,b)=>a.frontmatter.postNo - b.frontmatter.postNo).reverse()
 ---
 
-<Layout>
+<Layout title="LazyOwls Simple Blog" desContent="Simple blogs just came out of AI">
     <main class="clr-white">
     <Hero
         hero_image={sortedPosts[0].frontmatter.image1.src}
