@@ -10,7 +10,8 @@
 		"astro": "astro"
 	},
 	"dependencies": {
-		"astro": "^2.0.15",
+		"@astrojs/image": "^0.16.6",
+		"astro": "^2.2.2",
 		"gsap": "^3.11.4"
 	},
 	"devDependencies": {

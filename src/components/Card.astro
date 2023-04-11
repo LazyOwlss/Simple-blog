@@ -1,5 +1,6 @@
 ---
 import {alphaDate} from "../assets/utils.js"
+import { Image } from '@astrojs/image/components';
 export interface props {
     image: string;
     title: string;
@@ -13,7 +14,7 @@ const {date, title, image, description, alt = 'image', slug} = Astro.props;
 ---
 
 <div class="card flex">
-    <img loading="lazy" class="card-image" src={image} alt={alt}>
+    <Image src={image} height={1080} width={1920} format="webp" alt={alt} class="card-image" quality="30"/>
     <p class="card-date uppercase">{alphaDate(date)}</p>
     <h2 class="card-title">{title}</h2>
     <p class="card-description">{description}</p>
